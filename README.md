@@ -13,7 +13,12 @@
 * 程式語言：Golang
 * 程式編輯器：Visual Studio Code
 
-**三、檔案說明：** 
+**三、使用相依套件：**
+以下是開發該平台所使用的Golang套件：
+* github.com/gorilla/mux（Server的Web應用程式架構）
+* github.com/schollz/progressbar/v3（Client的進度bar）
+
+**四、檔案說明：** 
 此專案檔案主要分為兩個資料夾：server和client。其中，server資料夾為後端RESTful API平台的主要程式碼，client資料夾則存放使用者套件管理系統。接下來將對各資料夾中的檔案內容進行詳細說明。
 ```bash
 .
@@ -30,10 +35,33 @@
             └── list.go  # 列出已安裝套件
 ```
 
+**五、對於RESTful API請求：** 
+以下是此後端平台提供的RESTful API端點，包含對應的http方法、路徑及參數說明，如下所示：
+* `POST` /download：下載檔案，需在請求中加入以下資訊。
+```json
+{
+  "API_KEY": "hGl^X$Lu8&4-s",
+  "packageName": "套件名稱.go"
+}
+```
+
 ## 貳、操作說明
 **一、安裝程式方式：** 
-安裝部分一樣分成兩個部分，server和client。
+安裝部分一樣分成兩個部分，server與client兩部分，以下將依序進行說明。
 
+1. server
+- 步驟1：將server檔案夾中的程式，部署於一台可架設server且有安裝Golang的電腦中。
+- 步驟2：初始化與下載相依套件。
+```bash
+go mod init api
+go get -u github.com/gorilla/mux
+```
+- 步驟3：運行server
+```bash
+go run main.go
+```
+
+2. 
 
 
 
