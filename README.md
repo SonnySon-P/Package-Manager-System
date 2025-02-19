@@ -64,15 +64,20 @@ go run main.go
 <br>
 
 2. Client
-- 步驟1：編譯Golang，生成一個名為`pms`的執行檔。
+- 步驟1：初始化與下載相依套件。
+```bash
+go mod init api
+go get github.com/schollz/progressbar/v3
+```
+- 步驟2：編譯Golang，生成一個名為`pms`的執行檔。
 ```bash
 go build -o pms main.go
 ```
-- 步驟2：將執行檔放到`bin`資料夾
+- 步驟3：將執行檔放到`bin`資料夾
 ```bash
 mv pms /usr/local/bin/  # 是權限在最前面加上sudo
 ```
-- 步驟3：設置環境路徑，使得系統可以在任何地方執行`pms`。開啟`.bashrc`或`.zshrc`配置檔(取決於您使用的 shell)，如果使用的是`bash`，需要編輯`~/.bashrc`文件；如果使用的是`zsh`，則是`~/.zshrc`文件。
+- 步驟4：設置環境路徑，使得系統可以在任何地方執行`pms`。開啟`.bashrc`或`.zshrc`配置檔(取決於您使用的 shell)，如果使用的是`bash`，需要編輯`~/.bashrc`文件；如果使用的是`zsh`，則是`~/.zshrc`文件。
 ```bash
 nano ~/.bashrc  # 如果是 bash
 nano ~/.zshrc   # 如果是 zsh
@@ -85,7 +90,7 @@ export PATH=$PATH:~/bin
 ```bash
 source ~/.bashrc  # 或者 source ~/.zshrc
 ```
-- 步驟4：在CLI上執行程式，完成上述步驟後，就可以在命令行中直接使用。
+- 步驟5：在CLI上執行程式，完成上述步驟後，就可以在命令行中直接使用。
 ```bash
 pms initial  # 初始化
 pms install <package name>  # 安裝套件
