@@ -47,10 +47,10 @@
 
 ## 貳、操作說明
 **一、安裝程式方式：** 
-安裝部分一樣分成兩個部分，server與client兩部分，以下將依序進行說明。
+安裝部分一樣分成兩個部分，Server與Client兩部分，以下將依序進行說明。
 
-1. server
-- 步驟1：將server檔案夾中的程式，部署於一台可架設server且有安裝Golang的電腦中。
+1. Server
+- 步驟1：將server檔案夾中的程式，部署於一台可架設Server且有安裝Golang的電腦中。
 - 步驟2：初始化與下載相依套件。
 ```bash
 go mod init api
@@ -60,9 +60,13 @@ go get -u github.com/gorilla/mux
 ```bash
 go run main.go
 ```
+- 步驟4:請在同放置server資料夾的位置，創建一個Package資料夾，作為放置套件zip檔的地方。
 
-2. 
-
+2. Client
+- 步驟1：編譯Golang，生成一個名為`pms`的執行檔。
+```bash
+go build -o pms main.go
+```
 
 
 
